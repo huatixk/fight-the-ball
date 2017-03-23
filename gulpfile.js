@@ -40,10 +40,10 @@ gulp.task('testLess', function () {
 
 //图片压缩
 image = require('gulp-image');
-gulp.task('image', function () {
-  gulp.src('./src/images/**/*')
+gulp.task('img', function () {
+  gulp.src('./src/img/**/*')
     .pipe(image())
-    .pipe(gulp.dest('./dist/images'));
+    .pipe(gulp.dest('./dist/img'));
 });
 
 
