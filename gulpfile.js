@@ -49,6 +49,7 @@ gulp.task('serve', ['less'], function() {
 
 
 
+
 //图片压缩
 image = require('gulp-image');
 gulp.task('img', function () {
