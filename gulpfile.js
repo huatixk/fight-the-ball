@@ -24,26 +24,26 @@ gulp.task('serve', ['testLess'], function() {
   browserSync.init({
     server: "./"
   });
-  gulp.watch("./less/**/*.less", ['testLess']);
-  gulp.watch("./html/**/*.html").on('change', reload);
+  gulp.watch("./src/less/**/*.less", ['testLess']);
+  gulp.watch("./src/html/**/*.html").on('change', reload);
 });
 
 gulp.task('testLess', function () {
-    gulp.src('./less/**/*.less')
+    gulp.src('./src/less/**/*.less')
         .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
         .pipe(less({
         	plugins: [autoprefix]
         }))
-        .pipe(gulp.dest('./css'))
+        .pipe(gulp.dest('./dist/css'))
         .pipe(reload({stream: true}));
 });
 
 //图片压缩
 image = require('gulp-image');
 gulp.task('image', function () {
-  gulp.src('./images/**/*')
+  gulp.src('./src/images/**/*')
     .pipe(image())
-    .pipe(gulp.dest('./dest/images'));
+    .pipe(gulp.dest('./dist/images'));
 });
 
 
